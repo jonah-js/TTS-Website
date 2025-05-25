@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio-King</title>
+    <link rel="icon" type="image/x-icon" href="A-K-25-5-2025.png">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+        body {
+            min-width: 0;
+            position: relative;
+            background-image: url('TTSBG.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: 100% 100%;
+        }
+        .marquee {
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            -webkit-mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                black 10%,
+                black 90%,
+                transparent 100%
+            );
+            mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                black 10%,
+                black 90%,
+                transparent 100%
+            );
+        }
+        .marquee_header {
+            font-size: 35px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .marquee__inner {
+            display: flex;
+            width: max-content;
+            animation: marquee 20s linear infinite;
+            align-items: center;
+            max-width: 100%;
+        }
+        .marquee__group {
+            display: flex;
+            margin-right: 2rem;
+            flex-shrink: 0;
+        }
+        .marquee__group span {
+            margin: 0 1.5rem;
+            white-space: nowrap;
+            background: #000000;
+            color: white;
+            padding: 4px 16px 4px 12px;
+            border-radius: 6px;
+            font-size: 1.2rem;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @media (max-width: 600px) {
+            .marquee_header {
+                font-size: 20px;
+                margin: 0 auto 14px auto;
+                padding: 0 8px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+            .marquee {
+                width: 100%;
+                max-width: 100%;
+            }
+            .marquee__inner {
+                width: max-content;
+                min-width: 200%;
+                animation-duration: 12s;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .marquee__group {
+                margin-right: 1rem;
+            }
+            .marquee__group span {
+                font-size: 1rem;
+                margin: 0 0.5rem;
+                padding: 4px 8px 4px 8px;
+            }
+        }
+        /* Fallback: Scrollbar verhindern */
+        body::-webkit-scrollbar {
+            width: 0 !important;
+        }
+        /* ===============================
+   Basis- und Reset-Stile
+   =============================== */
+/* ===============================
+   Basis- und Reset-Stile
+   =============================== */
+/* ===============================
+   Basis- und Reset-Stile
+   =============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root-Variablen für einfache Anpassung */
+:root {
+  --primary-color: #f946ff;
+  --text-color: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Grundlegende Stile für Seite */
+body {
+  font-family: var(--font-stack);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: transparent;
+}
+
+/* Hero-Sektion ohne Hintergrund oder Rahmen */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Inhalt (Textbereich) */
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Button und beliebiges Div nebeneinander */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+/* Platzhalter für Illustration/Grafik */
+.hero-image {
+  margin-top: 1.5rem;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  background-color: transparent;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: visible;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+/* ===============================
+   Typografie und Elemente
+   =============================== */
+
+/* Hauptüberschrift */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+/* Hervorhebungs-Stil für das Wort im <span> */
+.highlight {
+  color: var(--primary-color);
+}
+
+/* Beschreibungstext */
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1000px) {
+  .hero-content p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1400px) {
+  .hero-content p {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===============================
+   Responsive (Media Queries)
+   =============================== */
+@media (max-width: 900px) {
+  .hero-image {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .audio-player {
+    max-width: 100%;
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  .hero-image {
+    height: 200px;
+  }
+  .audio-player {
+    max-width: 350px;
+    width: auto;
+    min-width: 160px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+  .hero-image {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .audio-player {
+    max-width: 100%;
+    width: 90vw;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 4px;
+  }
+  .button1 {
+    width: 90vw;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .album-cover {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .player-controls {
+    width: 100%;
+  }
+}
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  max-width: 350px;
+  min-width: 160px;
+  height: auto;
+  background-color: #e9c5c5;
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 1;
+}
+
+.album-cover {
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.player-controls {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.song-info {
+  margin-bottom: 4px;
+  min-width: 0;
+}
+
+.song-title, .artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #df0a7f;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #eaff00;
+  transform-origin: left;
+  transition: width 0.2s linear;
+}
+
+.buttons {
+  display: flex;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.play-btn,
+.pause-btn {
+  font-size: 16px;
+  color: #fff;
+  margin-right: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.play-btn:hover,
+.pause-btn:hover {
+  transform: scale(1.2);
+}
+
+.button1 {
+ --glow-color: rgb(234, 234, 234);
+ --glow-spread-color: rgba(255, 255, 255, 0.781);
+ --enhanced-glow-color: rgb(231, 206, 255);
+ --btn-color: rgb(176, 80, 187);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+}
+
+.button1::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.button1:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+.button1:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+
+
+
+#reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2.5rem 0 2rem 0;
+}
+.card1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  max-width: 320px;
+  min-width: 220px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  flex: 1 1 260px;
+}
+@media (max-width: 900px) {
+  #reviews-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .card1 {
+    max-width: 95vw;
+    min-width: 0;
+  }
+}
+
+/* ===============================
+   Dynamische Bewertungen (JavaScript-generiert)
+   =============================== */
+.card1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 20px;
+  max-width: 320px;
+  min-width: 220px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  flex: 1 1 260px;
+}
+
+.stars {
+  display: flex;
+  grid-gap: 0.125rem;
+  gap: 0.125rem;
+  color: rgb(238, 203, 8);
+}
+
+.star {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.infos {
+  margin-top: 1rem;
+}
+
+.date-time {
+  color: rgba(7, 63, 216, 1);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 0.4rem;
+  line-height: 1.625;
+  color: rgba(107, 114, 128, 1);
+}
+
+.author {
+  margin-top: 1.3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgba(107, 114, 128, 1);
+}
+
+/* ===============================
+   Trusted by Companies Section
+   =============================== */
+.trusted-section {
+  margin: 3rem 0 2rem 0;
+  text-align: center;
+}
+.trusted-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+}
+.trusted-logos-animated {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  animation: trusted-fadein 1.2s cubic-bezier(.4,0,.2,1);
+}
+.trusted-logos-animated img {
+  height: 38px;
+  opacity: 0.7;
+  filter: grayscale(1) contrast(1.2);
+  transition: transform 0.3s, opacity 0.3s, filter 0.3s;
+  transform: scale(0.95);
+  animation: logo-pop 0.7s cubic-bezier(.4,0,.2,1) both;
+}
+.trusted-logos-animated img:hover {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.08) rotate(-2deg);
+}
+.trusted-logos-animated img:nth-child(1) { animation-delay: 0.1s; }
+.trusted-logos-animated img:nth-child(2) { animation-delay: 0.2s; }
+.trusted-logos-animated img:nth-child(3) { animation-delay: 0.3s; }
+.trusted-logos-animated img:nth-child(4) { animation-delay: 0.4s; }
+.trusted-logos-animated img:nth-child(5) { animation-delay: 0.5s; }
+.trusted-logos-animated img:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes trusted-fadein {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes logo-pop {
+  0% { opacity: 0; transform: scale(0.7) translateY(30px);}
+  100% { opacity: 0.7; transform: scale(0.95) translateY(0);}
+}
+@media (max-width: 700px) {
+  .trusted-logos-animated {
+    gap: 1.2rem;
+  }
+  .trusted-title {
+    font-size: 1.05rem;
+  }
+  .trusted-logos-animated img {
+    height: 28px;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Hero-Sektion -->
+  <section class="hero">
+    <!-- Textinhalt (linke Seite) -->
+    <div class="hero-content">
+      <!-- Große Überschrift mit hervorgehobenem Wort -->
+      <h1><span class="highlight">Audio-King</span> text to speech</h1>
+      <!-- Beschreibungstext -->
+      <p>reliable and affordable text to audio converter</p>
+      <!-- Button und Audio-Player nebeneinander -->
+      <div class="hero-actions">
+        <a href="https://apify.com/theapicompany/text-to-speech" target="_blank" class="button1" style="text-decoration:none; display:inline-block;">Start creating</a>
+        <div class="audio-player">
+          <div class="album-cover"></div>
+          <div class="player-controls">
+            <div class="song-info">
+              <div class="song-title">Demo Version</div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" id="audioProgress"></div>
+            </div>
+            <div class="buttons">
+              <button class="play-btn" id="playBtn">
+                <svg viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="white" d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+    </svg>
+              </button>
+              <button class="pause-btn" id="pauseBtn">
+                <svg viewBox="0 0 16 16" class="bi bi-pause-fill" fill="currentColor" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="white" d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
+    </svg>
+              </button>
+            </div>
+          </div>
+          <!-- Audio Element -->
+          <audio id="audio" src="output.mp3"></audio>
+        </div>
+      </div>
+      <!-- Hero-Image entfernt, da Audio-Player jetzt oben ist -->
+    </div>
+    <!-- Illustrationsplatzhalter (rechte Seite, auf Mobile darunter) -->
+    
+      
+<!-- Hier kann eine Illustration, Grafik oder Animation eingebunden werden -->
+  </section>
+
+    <div class="marquee">
+        <div class="marquee_header">Advantages with us</div>
+        <div class="marquee__inner">
+            <div class="marquee__group">
+                <span>🔥 90% cheaper than others</span>
+                <span>✨ Fast Results</span>
+                <span>🚀 Scalable</span>
+                <span>🌟 Monthly Updates</span>
+                <span>🎉 On trusted Marketplace APIFY</span>
+            </div>
+            <div class="marquee__group">
+                <span>🔥 90% cheaper than others</span>
+                <span>✨ Fast Results</span>
+                <span>🚀 Scalable</span>
+                <span>🌟 Monthly Updates</span>
+                <span>🎉 On trusted Marketplace APIFY</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Bewertungen-Container -->
+<div id="reviews-container"></div>
+
+<h2 style="text-align:center; margin-top:2.5rem; color:50% #000000; font-size:2rem; font-weight:700;">Tutorials</h2>
+
+<div style="max-width:900px; margin:2rem auto 0 auto; display:flex; flex-direction:column; gap:2.5rem;">
+
+  <!-- Schritt 1 -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+    <div style="width:100%; text-align:center;">
+      <div style="font-size:1.1rem; font-weight:600; margin-bottom:0.5rem;">1. Text Input</div>
+      <img src="InputText.png" alt="Schritt 1" style="width:480px; max-width:100%; height:auto; border-radius:16px; background:#eee;">
+    </div>
+    <div style="flex:1; min-width:200px; text-align:center;">
+      <p style="font-size:1.1rem; color:#333; margin:0;">
+        Type your text into the second String. The text will be converted into a MP3 data.
+      </p>
+    </div>
+  </div>
+
+  <!-- Schritt 2 -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+    <div style="width:100%; text-align:center;">
+      <div style="font-size:1.1rem; font-weight:600; margin-bottom:0.5rem;">2. Audio output and Download</div>
+      <img src="Screenshot 2025-05-25 122853.png" alt="Schritt 2" style="width:480px; max-width:100%; height:auto; border-radius:16px; background:#eee;">
+    </div>
+    <div style="flex:1; min-width:200px; text-align:center;">
+      <p style="font-size:1.1rem; color:#333; margin:0;">
+        Click Storage, then click Key-Value-Storage. In there you find the MP3 file, hit download.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('playBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const progress = document.getElementById('audioProgress');
+
+  playBtn.addEventListener('click', () => {
+    audio.play();
+  });
+
+  pauseBtn.addEventListener('click', () => {
+    audio.pause();
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      const percent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${percent}%`;
+    }
+  });
+
+  // Dynamische Bewertungen
+  const reviews = [
+    {
+      stars: 5,
+      date: "2 days ago",
+      description: "Super easy to use and the audio quality is amazing. Highly recommended!",
+      author: "Johnathan McLink"
+    },
+    {
+      stars: 4,
+      date: "1 week ago",
+      description: "Works well for my projects. Sometimes a bit slow, but overall great value.",
+      author: "Janet Miterlers"
+    },
+    {
+      stars: 5,
+      date: "3 weeks ago",
+      description: "Best TTS service I've tried so far. Affordable and reliable.",
+      author: "Max Meier"
+    }
+  ];
+
+  function getStarsHTML(count) {
+    let html = '';
+    for (let i = 0; i < 5; i++) {
+      html += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star" style="opacity:${i < count ? 1 : 0.2}">
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+      </svg>`;
+    }
+    return html;
+  }
+
+  function renderReviews() {
+    const container = document.getElementById('reviews-container');
+    container.innerHTML = '';
+    reviews.forEach(r => {
+      container.innerHTML += `
+        <div class="card1">
+          <div class="stars">
+            ${getStarsHTML(r.stars)}
+          </div>
+          <div class="infos">
+            <p class="date-time">${r.date}</p>
+            <p class="description">${r.description}</p>
+          </div>
+          <div class="author">— ${r.author}</div>
+        </div>
+      `;
+    });
+  }
+
+  renderReviews();
+</script>
+<!-- Letztes Update Hinweis -->
+<div style="text-align:center; color:#6c6c6c; font-size:0.98rem; margin:2rem 0 1rem 0;">
+  @2025  
+</div>
+</body>
+</html>
